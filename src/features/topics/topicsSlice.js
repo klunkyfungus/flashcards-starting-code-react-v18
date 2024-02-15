@@ -34,6 +34,6 @@ export const topicsSlice = createSlice({
     }
 });
 
-export const topicsSelector = (state) => state.topics;
+export const allTopicsSelector = (state) => state.topics.topics;
 export const { addTopic } = topicsSlice.actions;
 export default topicsSlice.reducer;
