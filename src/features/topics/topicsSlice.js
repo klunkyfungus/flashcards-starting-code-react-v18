@@ -30,10 +30,21 @@ export const topicsSlice = createSlice({
                 icon: action.payload.icon,
                 quizIds: []
             }
+        },
+        /* example payload:
+        {
+            id: '456',
+            name: 'quiz name',
+            topicId: '123',
+            cardIds: ['1','2','3']
+        }
+        */
+        addQuizToTopic: (state, action) => {
+            state.topics[action.payload.topicId].quizIds.push(action.payload.id);
         }
     }
 });
 
 export const allTopicsSelector = (state) => state.topics.topics;
-export const { addTopic } = topicsSlice.actions;
+export const { addTopic, addQuizToTopic } = topicsSlice.actions;
 export default topicsSlice.reducer;
